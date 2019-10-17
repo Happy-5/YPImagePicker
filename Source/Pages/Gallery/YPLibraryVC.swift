@@ -284,7 +284,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
             self.v.hideLoader()
             self.v.hideGrid()
             self.delegate?.libraryViewFinishedLoading()
-//            self.v.assetViewContainer.refreshSquareCropButton()
+            self.v.assetViewContainer.refreshSquareCropButton()
         }
         
         DispatchQueue.global(qos: .userInitiated).async {
