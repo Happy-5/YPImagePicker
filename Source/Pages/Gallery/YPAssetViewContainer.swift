@@ -96,14 +96,14 @@ class YPAssetViewContainer: UIView {
     
     
     public func refreshSquareCropButton() {
-        if onlySquare {
-            squareCropButton.isHidden = true
-        } else {
-            if let image = zoomableView?.assetImageView.image {
-                let isImageASquare = image.size.width == image.size.height
-                squareCropButton.isHidden = isImageASquare
-            }
-        }
+//        if onlySquare {
+//            squareCropButton.isHidden = true
+//        } else {
+//            if let image = zoomableView?.assetImageView.image {
+//                let isImageASquare = image.size.width == image.size.height
+//                squareCropButton.isHidden = isImageASquare
+//            }
+//        }
         
         let shouldFit = YPConfig.library.onlySquare ? true : shouldCropToSquare
         zoomableView?.fitImage(shouldFit)
@@ -116,7 +116,7 @@ class YPAssetViewContainer: UIView {
         isMultipleSelection = on
         let image = on ? YPConfig.icons.multipleSelectionOnIcon : YPConfig.icons.multipleSelectionOffIcon
         multipleSelectionButton.setImage(image, for: .normal)
-//        refreshSquareCropButton()
+        refreshSquareCropButton()
 		if on {
 			self.squareCropButton.isHidden = true
 		} else {
