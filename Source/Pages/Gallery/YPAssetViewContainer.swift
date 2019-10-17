@@ -115,9 +115,9 @@ class YPAssetViewContainer: UIView {
     public func setMultipleSelectionMode(on: Bool) {
         isMultipleSelection = on
 		if on {
-			v.assetViewContainer.squareCropButton.isHidden = true
+			self.squareCropButton.isHidden = true
 		} else {
-			v.assetViewContainer.squareCropButton.isHidden = false
+			self.squareCropButton.isHidden = false
 		}
         let image = on ? YPConfig.icons.multipleSelectionOnIcon : YPConfig.icons.multipleSelectionOffIcon
         multipleSelectionButton.setImage(image, for: .normal)
