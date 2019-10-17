@@ -114,6 +114,11 @@ class YPAssetViewContainer: UIView {
     /// Use this to update the multiple selection mode UI state for the YPAssetViewContainer
     public func setMultipleSelectionMode(on: Bool) {
         isMultipleSelection = on
+		if on {
+			v.assetViewContainer.squareCropButton.isHidden = true
+		} else {
+			v.assetViewContainer.squareCropButton.isHidden = false
+		}
         let image = on ? YPConfig.icons.multipleSelectionOnIcon : YPConfig.icons.multipleSelectionOffIcon
         multipleSelectionButton.setImage(image, for: .normal)
         refreshSquareCropButton()
