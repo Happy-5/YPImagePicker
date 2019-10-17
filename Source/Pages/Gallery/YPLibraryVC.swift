@@ -151,16 +151,20 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                                        scrollViewZoomScale: v.assetZoomableView!.zoomScale)
                 ]
             }
-			v.assetViewContainer.squareCropButton.isHidden = true
         } else {
             selection.removeAll()
-			v.assetViewContainer.squareCropButton.isHidden = false
         }
 
         v.assetViewContainer.setMultipleSelectionMode(on: multipleSelectionEnabled)
         v.collectionView.reloadData()
         checkLimit()
         delegate?.libraryViewDidToggleMultipleSelection(enabled: multipleSelectionEnabled)
+		
+		if multipleSelectionEnabled || selection.count > 1 {
+			v.assetViewContainer.squareCropButton.isHidden = true
+		} else {
+			v.assetViewContainer.squareCropButton.isHidden = false
+		}
     }
     
     // MARK: - Tap Preview
@@ -280,7 +284,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
             self.v.hideLoader()
             self.v.hideGrid()
             self.delegate?.libraryViewFinishedLoading()
-            self.v.assetViewContainer.refreshSquareCropButton()
+//            self.v.assetViewContainer.refreshSquareCropButton()
         }
         
         DispatchQueue.global(qos: .userInitiated).async {
