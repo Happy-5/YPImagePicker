@@ -151,8 +151,10 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                                        scrollViewZoomScale: v.assetZoomableView!.zoomScale)
                 ]
             }
+			v.assetViewContainer.squareCropButton.isHidden = true
         } else {
             selection.removeAll()
+			v.assetViewContainer.squareCropButton.isHidden = false
         }
 
         v.assetViewContainer.setMultipleSelectionMode(on: multipleSelectionEnabled)
