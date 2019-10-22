@@ -114,7 +114,7 @@ class YPAssetViewContainer: UIView {
     /// Use this to update the multiple selection mode UI state for the YPAssetViewContainer
     public func setMultipleSelectionMode(on: Bool) {
         isMultipleSelection = on
-        let image = on ? YPConfig.icons.multipleSelectionOnIcon.withRenderingMode(.alwaysTemplate) : YPConfig.icons.multipleSelectionOffIcon.withRenderingMode(.alwaysOriginal)
+        let image = on ? YPConfig.icons.multipleSelectionOffIcon.withRenderingMode(.alwaysTemplate) : YPConfig.icons.multipleSelectionOffIcon.withRenderingMode(.alwaysOriginal)
 		multipleSelectionButton.setImage(image, for: .normal)
 		if on {
 			multipleSelectionButton.tintColor = UIColor.init(red: 252.0 / 255.0, green: 60.0 / 255.0, blue: 98.0 / 255.0, alpha: 1.0)
