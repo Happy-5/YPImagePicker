@@ -81,7 +81,7 @@ class YPAssetViewContainer: UIView {
         multipleSelectionButton-15-|
         multipleSelectionButton.setImage(YPConfig.icons.multipleSelectionOffIcon, for: .normal)
         multipleSelectionButton.Bottom == zoomableView!.Bottom - 15
-		multipleSelectionButton.layer.masksToBounds = true
+		multipleSelectionButton.clipsToBounds = true
         multipleSelectionButton.layer.cornerRadius = multipleSelectionButton.frame.height / 2
     }
     
@@ -118,7 +118,7 @@ class YPAssetViewContainer: UIView {
         let image = on ? YPConfig.icons.multipleSelectionOffIcon.withRenderingMode(.alwaysTemplate) : YPConfig.icons.multipleSelectionOffIcon.withRenderingMode(.alwaysOriginal)
 		multipleSelectionButton.setImage(image, for: .normal)
 		if on {
-			multipleSelectionButton.tintColor = UIColor.white
+			multipleSelectionButton.tintColor = UIColor.clear
 			multipleSelectionButton.backgroundColor = UIColor(red: 252.0 / 255.0, green: 60.0 / 255.0, blue: 98.0 / 255.0, alpha: 1.0)
 		}
 		
