@@ -116,7 +116,6 @@ class YPAssetViewContainer: UIView {
         isMultipleSelection = on
         let image = on ? YPConfig.icons.multipleSelectionOnIcon : YPConfig.icons.multipleSelectionOffIcon
 		multipleSelectionButton.setImage(image, for: .normal)
-		multipleSelectionButton.imageView?.contentMode = .scaleAspectFit
 		refreshSquareCropButton()
 		if on {
 			self.squareCropButton.isHidden = true
