@@ -70,18 +70,21 @@ class YPAssetViewContainer: UIView {
             // Crop Button
             squareCropButton.setImage(YPConfig.icons.cropIcon, for: .normal)
             sv(squareCropButton)
-            squareCropButton.size(42)
             |-15-squareCropButton
             squareCropButton.Bottom == zoomableView!.Bottom - 15
         }
         
         // Multiple selection button
         sv(multipleSelectionButton)
-        multipleSelectionButton.size(42)
         multipleSelectionButton-15-|
         multipleSelectionButton.setImage(YPConfig.icons.multipleSelectionOffIcon, for: .normal)
         multipleSelectionButton.Bottom == zoomableView!.Bottom - 15
         
+		let squareCropButtonWidthConstraint = NSLayoutConstraint(item: squareCropButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 42)
+		let squareCropButtonHeightConstraint = NSLayoutConstraint(item: squareCropButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 42)
+		let multipleSelectionButtonWidthConstraint = NSLayoutConstraint(item: squareCropButton, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 42)
+		let multipleSelectionButtonHeightConstraint = NSLayoutConstraint(item: squareCropButton, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 42)
+		self.addConstraints([squareCropButtonWidthConstraint, squareCropButtonHeightConstraint, multipleSelectionButtonWidthConstraint, multipleSelectionButtonHeightConstraint])
     }
     
     // MARK: - Square button
@@ -116,7 +119,6 @@ class YPAssetViewContainer: UIView {
         isMultipleSelection = on
         let image = on ? YPConfig.icons.multipleSelectionOnIcon : YPConfig.icons.multipleSelectionOffIcon
 		multipleSelectionButton.setImage(image, for: .normal)
-		multipleSelectionButton.contentMode = .scaleAspectFill
 		refreshSquareCropButton()
 		if on {
 			self.squareCropButton.isHidden = true
