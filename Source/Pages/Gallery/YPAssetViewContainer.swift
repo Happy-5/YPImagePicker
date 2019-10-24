@@ -79,9 +79,9 @@ class YPAssetViewContainer: UIView {
 		// Rotate button
 		sv(rotateButton)
 		rotateButton.size(42)
-        |-74-squareCropButton
-		squareCropButton.Bottom == zoomableView!.Bottom - 15
-		multipleSelectionButton.setImage(YPConfig.icons.rotateIcon, for: .normal)
+        |-74-rotateButton
+		rotateButton.Bottom == zoomableView!.Bottom - 15
+		rotateButton.setImage(YPConfig.icons.rotateIcon, for: .normal)
 		
 		// Multiple selection button
         sv(multipleSelectionButton)
@@ -101,7 +101,6 @@ class YPAssetViewContainer: UIView {
         }
         zoomableView?.fitImage(shouldCropToSquare, animated: true)
     }
-    
     
     public func refreshSquareCropButton() {
 //        if onlySquare {
