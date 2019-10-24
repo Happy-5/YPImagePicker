@@ -137,7 +137,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 	@objc
     func rotateButtonTapped() {
         doAfterPermissionCheck { [weak self] in
-            self?.v.assetViewContainer.squareCropButtonTapped()
+            self?.v.assetViewContainer.rotateButtonTapped()
         }
     }
     
