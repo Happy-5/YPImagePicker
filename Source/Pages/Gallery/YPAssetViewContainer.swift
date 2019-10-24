@@ -105,7 +105,7 @@ class YPAssetViewContainer: UIView {
 	@objc public func rotateButtonTapped() {
 		let rotatedImage = zoomableView?.assetImageView.image?.rotate(radians: -(.pi / 2))
 		zoomableView?.assetImageView.image = rotatedImage
-		refreshSquareCropButton()
+		zoomableView?.cropAreaDidChange()
 	}
     
     public func refreshSquareCropButton() {
