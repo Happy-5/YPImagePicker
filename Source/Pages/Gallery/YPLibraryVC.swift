@@ -137,11 +137,6 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     func rotateButtonTapped() {
         doAfterPermissionCheck { [weak self] in
             self?.v.assetViewContainer.rotateButtonTapped()
-			self?.v.assetZoomableView.applyStoredCropPosition(
-				YPLibrarySelection(index: currentlySelectedIndex,
-								   cropRect: v.currentCropRect(),
-								   scrollViewContentOffset: v.assetZoomableView!.contentOffset,
-								   scrollViewZoomScale: v.assetZoomableView!.zoomScale))
         }
     }
     

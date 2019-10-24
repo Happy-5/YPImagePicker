@@ -77,11 +77,11 @@ class YPAssetViewContainer: UIView {
         }
         
 		// Rotate button
-		sv(rotateButton)
-		rotateButton.size(42)
-        |-74-rotateButton
-		rotateButton.Bottom == zoomableView!.Bottom - 15
-		rotateButton.setImage(YPConfig.icons.rotateIcon, for: .normal)
+//		sv(rotateButton)
+//		rotateButton.size(42)
+//        |-74-rotateButton
+//		rotateButton.Bottom == zoomableView!.Bottom - 15
+//		rotateButton.setImage(YPConfig.icons.rotateIcon, for: .normal)
 		
 		// Multiple selection button
         sv(multipleSelectionButton)
