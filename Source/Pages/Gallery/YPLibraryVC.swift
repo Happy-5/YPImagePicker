@@ -10,7 +10,6 @@ import UIKit
 import Photos
 
 public class YPLibraryVC: UIViewController, YPPermissionCheckable {
-    
     internal weak var delegate: YPLibraryViewDelegate?
     internal var v: YPLibraryView!
     internal var isProcessing = false // true if video or image is in processing state
@@ -144,7 +143,6 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     // MARK: - Multiple Selection
     @objc
     func multipleSelectionButtonTapped() {
-        
         // Prevent desactivating multiple selection when using `minNumberOfItems`
         if YPConfig.library.minNumberOfItems > 1 && multipleSelectionEnabled {
             return
@@ -194,8 +192,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     }
     
     // MARK: - Permissions
-    
-    func doAfterPermissionCheck(block:@escaping () -> Void) {
+    func doAfterPermissionCheck(block: @escaping () -> Void) {
         checkPermissionToAccessPhotoLibrary { hasPermission in
             if hasPermission {
                 block()
@@ -240,7 +237,6 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     }
     
     func refreshMediaRequest() {
-        
         let options = buildPHFetchOptions()
         
         if let collection = mediaManager.collection {
