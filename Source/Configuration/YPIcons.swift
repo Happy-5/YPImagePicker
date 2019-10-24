@@ -20,6 +20,7 @@ public struct YPIcons {
     public var flashOffIcon: UIImage = imageFromBundle("yp_iconFlash_off")
     public var flashAutoIcon: UIImage = imageFromBundle("yp_iconFlash_auto")
     public var loopIcon: UIImage = imageFromBundle("yp_iconLoop")
+	public var rotateIcon: UIImage = imageFromBundle("yp_rotate")
     public var multipleSelectionOffIcon: UIImage = imageFromBundle("yp_multiple")
     public var multipleSelectionOnIcon: UIImage = imageFromBundle("yp_multiple_colored")
     public var capturePhotoImage: UIImage = imageFromBundle("yp_iconCapture")
