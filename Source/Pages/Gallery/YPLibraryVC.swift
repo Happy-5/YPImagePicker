@@ -152,6 +152,8 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 
         if multipleSelectionEnabled {
             if selection.isEmpty {
+				refreshMediaRequest()
+				currentlySelectedIndex = 0
                 selection = [
                     YPLibrarySelection(index: currentlySelectedIndex,
                                        cropRect: v.currentCropRect(),
@@ -160,6 +162,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                 ]
             }
         } else {
+			refreshMediaRequest()
             selection.removeAll()
         }
 
@@ -264,8 +267,14 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         }
         let options = PHFetchOptions()
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
-        options.predicate = YPConfig.library.mediaType.predicate()
-        return options
+		
+		if self.multipleSelectionEnabled {
+			options.predicate = YPlibraryMediaType.photo.predicate()
+		} else {
+			options.predicate = YPConfig.library.mediaType.predicate()
+		}
+
+		return options
     }
     
     func scrollToTop() {

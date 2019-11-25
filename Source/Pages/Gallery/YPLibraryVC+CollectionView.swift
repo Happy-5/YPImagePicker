@@ -17,7 +17,7 @@ extension YPLibraryVC {
         v.collectionView.register(YPLibraryViewCell.self, forCellWithReuseIdentifier: "YPLibraryViewCell")
         
         // Long press on cell to enable multiple selection
-        let longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(longPressGR:)))
+//        let longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(longPressGR:)))
         longPressGR.minimumPressDuration = 0.5
         v.collectionView.addGestureRecognizer(longPressGR)
     }
