@@ -82,7 +82,7 @@ public struct YPImagePickerConfiguration {
     public var preferredStatusBarStyle = UIStatusBarStyle.default
     
     /// Defines the text colour to be shown when a bottom option is selected
-    public var bottomMenuItemSelectedColour = UIColor.primaryColor()
+    public var bottomMenuItemSelectedColour = UIColor(r: 38, g: 38, b: 38)
     
     /// Defines the text colour to be shown when a bottom option is unselected
     public var bottomMenuItemUnSelectedColour = UIColor(r: 153, g: 153, b: 153)
