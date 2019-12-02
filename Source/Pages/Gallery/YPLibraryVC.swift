@@ -305,13 +305,13 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         DispatchQueue.global(qos: .userInitiated).async {
             switch asset.mediaType {
             case .image:
-				self.v.assetViewContainer.multipleSelectionButton.isHidden = false // show icon multiple for image
+				v.assetViewContainer.multipleSelectionButton.isHidden = false // show icon multiple for image
                 self.v.assetZoomableView.setImage(asset,
                                                   mediaManager: self.mediaManager,
                                                   storedCropPosition: self.fetchStoredCrop(),
                                                   completion: completion)
             case .video:
-				self.v.assetViewContainer.multipleSelectionButton.isHidden = true // hidden icon multiple for video
+				v.assetViewContainer.multipleSelectionButton.isHidden = true // hidden icon multiple for video
                 self.v.assetZoomableView.setVideo(asset,
                                                   mediaManager: self.mediaManager,
                                                   storedCropPosition: self.fetchStoredCrop(),
