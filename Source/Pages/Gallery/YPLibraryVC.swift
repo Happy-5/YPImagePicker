@@ -153,7 +153,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         if multipleSelectionEnabled {
             if selection.isEmpty {
 				refreshMediaRequest()
-				currentlySelectedIndex = 0
+//				currentlySelectedIndex = 0
                 selection = [
                     YPLibrarySelection(index: currentlySelectedIndex,
                                        cropRect: v.currentCropRect(),
