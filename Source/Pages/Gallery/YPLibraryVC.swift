@@ -305,13 +305,11 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         DispatchQueue.global(qos: .userInitiated).async {
             switch asset.mediaType {
             case .image:
-				self.v.assetViewContainer.multipleSelectionButton.isEnabled = true
                 self.v.assetZoomableView.setImage(asset,
                                                   mediaManager: self.mediaManager,
                                                   storedCropPosition: self.fetchStoredCrop(),
                                                   completion: completion)
             case .video:
-				self.v.assetViewContainer.multipleSelectionButton.isEnabled = false
                 self.v.assetZoomableView.setVideo(asset,
                                                   mediaManager: self.mediaManager,
                                                   storedCropPosition: self.fetchStoredCrop(),

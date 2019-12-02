@@ -8,6 +8,8 @@
 
 import UIKit
 
+internal var v: YPLibraryView!
+
 extension YPLibraryVC {
     var isLimitExceeded: Bool { return selection.count >= YPConfig.library.maxNumberOfItems }
     
@@ -121,6 +123,13 @@ extension YPLibraryVC: UICollectionViewDelegate {
         }
         
         let isVideo = (asset.mediaType == .video)
+		
+		if isVideo {
+			v.assetViewContainer.multipleSelectionButton.isHidden = true
+		} else {
+			v.assetViewContainer.multipleSelectionButton.isHidden = false
+		}
+		
         cell.durationLabel.isHidden = !isVideo
         cell.durationLabel.text = isVideo ? YPHelper.formattedStrigFrom(asset.duration) : ""
         cell.multipleSelectionIndicator.isHidden = !multipleSelectionEnabled
