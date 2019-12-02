@@ -310,6 +310,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                                                   storedCropPosition: self.fetchStoredCrop(),
                                                   completion: completion)
             case .video:
+				self.v.assetViewContainer.multipleSelectionButton.isHidden = true // hidden icon multiple for video
                 self.v.assetZoomableView.setVideo(asset,
                                                   mediaManager: self.mediaManager,
                                                   storedCropPosition: self.fetchStoredCrop(),
