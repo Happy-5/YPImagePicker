@@ -291,7 +291,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     }
     
     func changeAsset(_ asset: PHAsset) {
-        mediaManager.selectedAsset = asset
+        medCiaManager.selectedAsset = asset
         latestImageTapped = asset.localIdentifier
         delegate?.libraryViewStartedLoading()
         
@@ -301,7 +301,13 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
             self.delegate?.libraryViewFinishedLoading()
             self.v.assetViewContainer.refreshSquareCropButton()
         }
-        
+		
+		if asset.mediaType == .video {
+			self.v.assetViewContainer.multipleSelectionButton.isHidden = true // hidden icon multiple for video
+		} else {
+			self.v.assetViewContainer.multipleSelectionButton.isHidden = false // show icon multiple for video
+		}
+		
         DispatchQueue.global(qos: .userInitiated).async {
             switch asset.mediaType {
             case .image:
