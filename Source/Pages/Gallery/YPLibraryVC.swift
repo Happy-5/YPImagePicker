@@ -155,10 +155,9 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
             if selection.isEmpty {
 				
 				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
-				refreshMediaRequest()
 				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
+				refreshMediaRequest()
 
-//				currentlySelectedIndex = 0
                 selection = [
                     YPLibrarySelection(index: self.currentlyIndex,
                                        cropRect: v.currentCropRect(),
