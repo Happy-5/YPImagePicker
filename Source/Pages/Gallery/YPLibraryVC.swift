@@ -161,7 +161,9 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 //				currentlySelectedIndex = 0
                 selection = [
                     YPLibrarySelection(index: self.currentlyIndex,
-                                       cropRect: v.currentCropRect())
+                                       cropRect: v.currentCropRect(),
+                                       scrollViewContentOffset: v.assetZoomableView!.contentOffset,
+                                       scrollViewZoomScale: v.assetZoomableView!.zoomScale)
                 ]
             }
         } else {
@@ -258,7 +260,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 				v.collectionView.reloadData()
 				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex, section: 0),
 											animated: false,
-											scrollPosition: UICollectionView.ScrollPosition())
+											scrollPosition: [])
 			} else {
 				changeAsset(mediaManager.fetchResult[0])
 				v.collectionView.reloadData()
