@@ -263,6 +263,11 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex, section: 0),
 											animated: false,
 											scrollPosition: [])
+				
+				
+				print("test1", currentlySelectedIndex)
+				print("test2", currentlyIndex)
+
 			} else {
 				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
 				v.collectionView.reloadData()
