@@ -161,9 +161,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 //				currentlySelectedIndex = 0
                 selection = [
                     YPLibrarySelection(index: self.currentlyIndex,
-                                       cropRect: v.currentCropRect(),
-                                       scrollViewContentOffset: v.assetZoomableView!.contentOffset,
-                                       scrollViewZoomScale: v.assetZoomableView!.zoomScale)
+                                       cropRect: v.currentCropRect())
                 ]
             }
         } else {
