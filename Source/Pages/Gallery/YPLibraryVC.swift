@@ -156,12 +156,14 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
 				refreshMediaRequest()
 				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
+				let newAsset = mediaManager.fetchResult[self.currentlyIndex]
 
                 selection = [
                     YPLibrarySelection(index: self.currentlyIndex,
                                        cropRect: v.currentCropRect(),
                                        scrollViewContentOffset: v.assetZoomableView!.contentOffset,
-                                       scrollViewZoomScale: v.assetZoomableView!.zoomScale)
+                                       scrollViewZoomScale: v.assetZoomableView!.zoomScale,
+									   assetIdentifier: newAsset.localIdentifier)
                 ]
             }
         } else {
@@ -254,11 +256,11 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         if mediaManager.fetchResult.count > 0 {
 			
 			if multipleSelectionEnabled {
-//				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
 				v.collectionView.reloadData()
-//				v.collectionView.selectItem(at: IndexPath(row: currentlySelectedIndex, section: 0),
-//											animated: false,
-//											scrollPosition: UICollectionView.ScrollPosition())
+				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex, section: 0),
+											animated: false,
+											scrollPosition: UICollectionView.ScrollPosition())
+				changeAsset(mediaManager.fetchResult[currentlyIndex])
 			} else {
 				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
 				v.collectionView.reloadData()
@@ -270,7 +272,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         } else {
             delegate?.noPhotosForOptions()
         }
-        scrollToTop()
+//        scrollToTop()
     }
     
     func buildPHFetchOptions() -> PHFetchOptions {
