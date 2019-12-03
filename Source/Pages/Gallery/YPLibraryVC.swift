@@ -258,12 +258,11 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 			
 			if multipleSelectionEnabled {
 				v.collectionView.reloadData()
-				
-				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
-				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset)
 				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex1, section: 0),
 											animated: false,
 											scrollPosition: UICollectionView.ScrollPosition())
+				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
+				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset)
 				changeAsset(mediaManager.fetchResult[currentlyIndex1])
 
 			} else {
