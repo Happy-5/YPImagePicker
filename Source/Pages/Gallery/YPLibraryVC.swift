@@ -17,6 +17,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     internal var initialized = false
     internal var selection = [YPLibrarySelection]()
     internal var currentlySelectedIndex: Int = 0
+	internal var currentlyIndex: Int = 0
     internal let mediaManager = LibraryMediaManager()
     internal var latestImageTapped = ""
     internal let panGestureHelper = PanGestureHelper()
@@ -152,10 +153,14 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 
         if multipleSelectionEnabled {
             if selection.isEmpty {
+				
+				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
 				refreshMediaRequest()
-				currentlySelectedIndex = 0
+				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
+
+//				currentlySelectedIndex = 0
                 selection = [
-                    YPLibrarySelection(index: currentlySelectedIndex,
+                    YPLibrarySelection(index: self.currentlyIndex,
                                        cropRect: v.currentCropRect(),
                                        scrollViewContentOffset: v.assetZoomableView!.contentOffset,
                                        scrollViewZoomScale: v.assetZoomableView!.zoomScale)
