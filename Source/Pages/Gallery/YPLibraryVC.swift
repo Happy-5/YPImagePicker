@@ -18,6 +18,8 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     internal var selection = [YPLibrarySelection]()
     internal var currentlySelectedIndex: Int = 0
 	internal var currentlyIndex: Int = 0
+	internal var currentlyIndex1: Int = 0
+
     internal let mediaManager = LibraryMediaManager()
     internal var latestImageTapped = ""
     internal let panGestureHelper = PanGestureHelper()
@@ -256,14 +258,18 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 			
 			if multipleSelectionEnabled {
 				v.collectionView.reloadData()
-				changeAsset(mediaManager.fetchResult[currentlyIndex])
-				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex, section: 0),
+				
+				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
+				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset)
+				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex1, section: 0),
 											animated: false,
 											scrollPosition: UICollectionView.ScrollPosition())
+				changeAsset(mediaManager.fetchResult[currentlyIndex1])
+
 			} else {
 				v.collectionView.reloadData()
 				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
-				v.collectionView.selectItem(at: IndexPath(row: currentlySelectedIndex, section: 0),
+				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex, section: 0),
 											animated: false,
 											scrollPosition: UICollectionView.ScrollPosition())
 			}
