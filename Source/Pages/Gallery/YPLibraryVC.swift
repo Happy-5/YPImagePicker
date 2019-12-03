@@ -154,8 +154,9 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         if multipleSelectionEnabled {
             if selection.isEmpty {
 				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
-				refreshMediaRequest()
 				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
+				refreshMediaRequest()
+
                 selection = [
                     YPLibrarySelection(index: self.currentlyIndex,
                                        cropRect: v.currentCropRect(),
@@ -253,11 +254,11 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         if mediaManager.fetchResult.count > 0 {
 			
 			if multipleSelectionEnabled {
-				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
-
-				changeAsset(mediaManager.fetchResult[currentlyIndex])
 				v.collectionView.reloadData()
+				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
 				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
+				
+				changeAsset(mediaManager.fetchResult[currentlyIndex])
 
 				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex, section: 0),
 											animated: false,
