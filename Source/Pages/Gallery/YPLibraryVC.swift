@@ -162,8 +162,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                     YPLibrarySelection(index: self.currentlyIndex,
                                        cropRect: v.currentCropRect(),
                                        scrollViewContentOffset: v.assetZoomableView!.contentOffset,
-                                       scrollViewZoomScale: v.assetZoomableView!.zoomScale,
-									   assetIdentifier: newAsset.localIdentifier)
+                                       scrollViewZoomScale: v.assetZoomableView!.zoomScale)
                 ]
             }
         } else {
