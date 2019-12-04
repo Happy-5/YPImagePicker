@@ -174,6 +174,11 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 
         v.assetViewContainer.setMultipleSelectionMode(on: multipleSelectionEnabled)
         v.collectionView.reloadData()
+		let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
+		self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset)
+		print("2",currentlyIndex1)
+		print("2",currentlyIndex)
+		print("2",currentlySelectedIndex)
         checkLimit()
         delegate?.libraryViewDidToggleMultipleSelection(enabled: multipleSelectionEnabled)
 		
@@ -182,6 +187,12 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 		} else {
 			v.assetViewContainer.squareCropButton.isHidden = false
 		}
+		
+		let currentAsset1 = mediaManager.fetchResult[currentlySelectedIndex]
+		self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset1)
+		print("3",currentlyIndex1)
+		print("3",currentlyIndex)
+		print("3",currentlySelectedIndex)
     }
     
     // MARK: - Tap Preview
@@ -264,9 +275,9 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 				changeAsset(mediaManager.fetchResult[currentlyIndex1])
 				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
 				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset)
-				print(currentlyIndex1)
-				print(currentlyIndex)
-				print(currentlySelectedIndex)
+				print("1",currentlyIndex1)
+				print("1",currentlyIndex)
+				print("1",currentlySelectedIndex)
 
 
 			} else {
@@ -314,6 +325,8 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     }
     
     func changeAsset(_ asset: PHAsset) {
+		print("0", mediaManager.fetchResult.index(of: asset))
+
         mediaManager.selectedAsset = asset
         latestImageTapped = asset.localIdentifier
         delegate?.libraryViewStartedLoading()
