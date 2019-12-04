@@ -156,25 +156,8 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         if multipleSelectionEnabled {
             if selection.isEmpty {
 				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
-				print("-4",currentlyIndex1)
-				print("-4",currentlyIndex)
-				print("-4",currentlySelectedIndex)
 				refreshMediaRequest()
-				print("-3",currentlyIndex1)
-				print("-3",currentlyIndex)
-				print("-3",currentlySelectedIndex)
 				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
-				print("-2",currentlyIndex1)
-				print("-2",currentlyIndex)
-				print("-2",currentlySelectedIndex)
-				
-				
-				
-				let currentAsset5 = mediaManager.fetchResult[currentlySelectedIndex]
-				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset5)
-				print("-1",currentlyIndex1)
-				print("-1",currentlyIndex)
-				print("-1",currentlySelectedIndex)
 				
                 selection = [
                     YPLibrarySelection(index: self.currentlyIndex,
@@ -182,12 +165,6 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                                        scrollViewContentOffset: v.assetZoomableView!.contentOffset,
                                        scrollViewZoomScale: v.assetZoomableView!.zoomScale)
                 ]
-				
-				let currentAsset2 = mediaManager.fetchResult[currentlySelectedIndex]
-				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset2)
-				print("0",currentlyIndex1)
-				print("0",currentlyIndex)
-				print("0",currentlySelectedIndex)
             }
         } else {
 			refreshMediaRequest()
@@ -195,18 +172,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         }
 
         v.assetViewContainer.setMultipleSelectionMode(on: multipleSelectionEnabled)
-		let currentAsset1 = mediaManager.fetchResult[currentlySelectedIndex]
-		self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset1)
-		print("1",currentlyIndex1)
-		print("1",currentlyIndex)
-		print("1",currentlySelectedIndex)
         v.collectionView.reloadData()
-		
-		let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
-		self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset)
-		print("2",currentlyIndex1)
-		print("2",currentlyIndex)
-		print("2",currentlySelectedIndex)
         checkLimit()
         delegate?.libraryViewDidToggleMultipleSelection(enabled: multipleSelectionEnabled)
 		
