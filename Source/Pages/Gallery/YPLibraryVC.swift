@@ -156,10 +156,26 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         if multipleSelectionEnabled {
             if selection.isEmpty {
 				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
+				print("-4",currentlyIndex1)
+				print("-4",currentlyIndex)
+				print("-4",currentlySelectedIndex)
 				refreshMediaRequest()
+				print("-3",currentlyIndex1)
+				print("-3",currentlyIndex)
+				print("-3",currentlySelectedIndex)
 				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
-				let newAsset = mediaManager.fetchResult[self.currentlyIndex]
-
+				print("-2",currentlyIndex1)
+				print("-2",currentlyIndex)
+				print("-2",currentlySelectedIndex)
+				
+				
+				
+				let currentAsset5 = mediaManager.fetchResult[currentlySelectedIndex]
+				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset5)
+				print("-1",currentlyIndex1)
+				print("-1",currentlyIndex)
+				print("-1",currentlySelectedIndex)
+				
                 selection = [
                     YPLibrarySelection(index: self.currentlyIndex,
                                        cropRect: v.currentCropRect(),
