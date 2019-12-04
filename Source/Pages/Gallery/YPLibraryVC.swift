@@ -288,35 +288,14 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         }
                 
         if mediaManager.fetchResult.count > 0 {
-			
 			if multipleSelectionEnabled {
-				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
-
-				let currentAsset1 = mediaManager.fetchResult[currentlySelectedIndex]
-				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset1)
-				print("9",currentlyIndex1)
-				print("9",currentlyIndex)
-				print("9",currentlySelectedIndex)
-				
-				v.collectionView.reloadData()
-				
-				let currentAsset2 = mediaManager.fetchResult[currentlySelectedIndex]
-				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset2)
-				print("8",currentlyIndex1)
-				print("8",currentlyIndex)
-				print("8",currentlySelectedIndex)
-				
-				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex1, section: 0),
-											animated: false,
-											scrollPosition: UICollectionView.ScrollPosition())
-				let currentAsset3 = mediaManager.fetchResult[currentlySelectedIndex]
-				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset3)
-				print("7",currentlyIndex1)
-				print("7",currentlyIndex)
-				print("7",currentlySelectedIndex)
-
-
-
+//				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
+//				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
+//				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
+//				v.collectionView.reloadData()
+//				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex1, section: 0),
+//											animated: false,
+//											scrollPosition: UICollectionView.ScrollPosition())
 			} else {
 				v.collectionView.reloadData()
 				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
@@ -362,8 +341,6 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     }
     
     func changeAsset(_ asset: PHAsset) {
-		print("0", mediaManager.fetchResult.index(of: asset))
-
         mediaManager.selectedAsset = asset
         latestImageTapped = asset.localIdentifier
         delegate?.libraryViewStartedLoading()
