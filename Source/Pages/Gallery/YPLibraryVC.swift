@@ -290,7 +290,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         if mediaManager.fetchResult.count > 0 {
 			
 			if multipleSelectionEnabled {
-				changeAsset(mediaManager.fetchResult[currentlyIndex1])
+				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
 
 				let currentAsset1 = mediaManager.fetchResult[currentlySelectedIndex]
 				self.currentlyIndex1 = mediaManager.fetchResult.index(of: currentAsset1)
