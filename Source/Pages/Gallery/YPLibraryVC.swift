@@ -254,26 +254,7 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         }
                 
         if mediaManager.fetchResult.count > 0 {
-//				changeAsset(mediaManager.fetchResult[0])
-//				v.collectionView.reloadData()
-//				v.collectionView.selectItem(at: IndexPath(row: 0, section: 0),
-//											animated: false,
-//											scrollPosition: UICollectionView.ScrollPosition())
-//				if !multipleSelectionEnabled {
-//					addToSelection(indexPath: IndexPath(row: 0, section: 0))
-//				}
-//
-			
-			if multipleSelectionEnabled {
-				
-//				let currentAsset = mediaManager.fetchResult[currentlySelectedIndex]
-//				self.currentlyIndex = mediaManager.fetchResult.index(of: currentAsset)
-//				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
-//				v.collectionView.reloadData()
-//				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex1, section: 0),
-//											animated: false,
-//											scrollPosition: UICollectionView.ScrollPosition())
-			} else {
+			if multipleSelectionEnabled == false {
 				v.collectionView.reloadData()
 				changeAsset(mediaManager.fetchResult[currentlySelectedIndex])
 				v.collectionView.selectItem(at: IndexPath(row: currentlyIndex, section: 0),
