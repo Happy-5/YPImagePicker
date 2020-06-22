@@ -417,8 +417,14 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                 }
                 
                 // Fill result media items array
-                var resultMediaItems: [YPMediaItem] = []
-                let asyncGroup = DispatchGroup()
+				var resultMediaItems: [YPMediaItem] = []
+				let dummyImage = YPMediaPhoto(image: imageFromBundle("yp_arrow_left"), exifMeta: nil, asset: nil)
+				 
+				let asyncGroup = DispatchGroup()
+				 
+				for _ in selectedAssets {
+					resultMediaItems.append(YPMediaItem.photo(p: dummyImage))
+				}
                 
                 for asset in selectedAssets {
                     asyncGroup.enter()
@@ -427,16 +433,22 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                     case .image:
                         self.fetchImageAndCrop(for: asset.asset, withCropRect: asset.cropRect) { image, exifMeta in
                             let photo = YPMediaPhoto(image: image.resizedImageIfNeeded(), exifMeta: exifMeta, asset: asset.asset)
-                            resultMediaItems.append(YPMediaItem.photo(p: photo))
-                            asyncGroup.leave()
+							
+							if let index = selectedAssets.firstIndex(where: {$0.asset == asset.asset}) {
+								resultMediaItems[index] = YPMediaItem.photo(p: photo)
+								asyncGroup.leave()
+							}
                         }
                         
                     case .video:
                         self.checkVideoLengthAndCrop(for: asset.asset, withCropRect: asset.cropRect) { videoURL in
                             let videoItem = YPMediaVideo(thumbnail: thumbnailFromVideoPath(videoURL),
                                                          videoURL: videoURL, asset: asset.asset)
-                            resultMediaItems.append(YPMediaItem.video(v: videoItem))
-                            asyncGroup.leave()
+							
+                            if let index = selectedAssets.firstIndex(where: {$0.asset == asset.asset}) {
+								resultMediaItems[index] = YPMediaItem.video(v: videoItem)
+								 asyncGroup.leave()
+							}
                         }
                     default:
                         break
