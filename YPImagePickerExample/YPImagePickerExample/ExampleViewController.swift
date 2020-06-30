@@ -168,6 +168,7 @@ class ExampleViewController: UIViewController {
         //options.sortDescriptors = [sortDescriptor]
         //
         //config.library.options = options
+        config.library.preselectedItems = selectedItems
 
         let picker = YPImagePicker(configuration: config)
 

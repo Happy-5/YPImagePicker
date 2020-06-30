@@ -23,9 +23,13 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 
     // MARK: - Init
     
-    public required init() {
+    public required init(items: [YPMediaItem]?) {
         super.init(nibName: nil, bundle: nil)
         title = YPConfig.wordings.libraryTitle
+    }
+	
+    public convenience init() {
+        self.init(items: nil)
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -62,6 +66,28 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
         
         v.assetViewContainer.multipleSelectionButton.isHidden = !(YPConfig.library.maxNumberOfItems > 1)
         v.maxNumberWarningLabel.text = String(format: YPConfig.wordings.warningMaxItemsLimit, YPConfig.library.maxNumberOfItems)
+		
+        if let preselectedItems = YPConfig.library.preselectedItems {
+            selection = preselectedItems.compactMap { item -> YPLibrarySelection? in
+                var itemAsset: PHAsset?
+                switch item {
+                case .photo(let photo):
+                    itemAsset = photo.asset
+                case .video(let video):
+                    itemAsset = video.asset
+                }
+                guard let asset = itemAsset else {
+                    return nil
+                }
+                
+                // The negative index will be corrected in the collectionView:cellForItemAt:
+				return YPLibrarySelection(index: -1, assetIdentifier: asset.localIdentifier)
+            }
+
+            multipleSelectionEnabled = selection.count > 1
+            v.assetViewContainer.setMultipleSelectionMode(on: multipleSelectionEnabled)
+            v.collectionView.reloadData()
+        }
     }
     
     // MARK: - View Lifecycle
@@ -141,8 +167,19 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
     }
     
     // MARK: - Multiple Selection
+
     @objc
     func multipleSelectionButtonTapped() {
+        doAfterPermissionCheck { [weak self] in
+            self?.showMultipleSelection()
+        }
+    }
+    
+    private func showMultipleSelection() {
+        if !multipleSelectionEnabled {
+            selection.removeAll()
+        }
+        
         // Prevent desactivating multiple selection when using `minNumberOfItems`
         if YPConfig.library.minNumberOfItems > 1 && multipleSelectionEnabled {
             return
@@ -152,27 +189,24 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
 
         if multipleSelectionEnabled {
             if selection.isEmpty {
+                let asset = mediaManager.fetchResult[currentlySelectedIndex]
                 selection = [
                     YPLibrarySelection(index: currentlySelectedIndex,
                                        cropRect: v.currentCropRect(),
                                        scrollViewContentOffset: v.assetZoomableView!.contentOffset,
-                                       scrollViewZoomScale: v.assetZoomableView!.zoomScale)
+                                       scrollViewZoomScale: v.assetZoomableView!.zoomScale,
+                                       assetIdentifier: asset.localIdentifier)
                 ]
             }
         } else {
             selection.removeAll()
+            addToSelection(indexPath: IndexPath(row: currentlySelectedIndex, section: 0))
         }
 
         v.assetViewContainer.setMultipleSelectionMode(on: multipleSelectionEnabled)
         v.collectionView.reloadData()
         checkLimit()
         delegate?.libraryViewDidToggleMultipleSelection(enabled: multipleSelectionEnabled)
-		
-		if multipleSelectionEnabled || selection.count > 1 {
-			v.assetViewContainer.squareCropButton.isHidden = true
-		} else {
-			v.assetViewContainer.squareCropButton.isHidden = false
-		}
     }
     
     // MARK: - Tap Preview
