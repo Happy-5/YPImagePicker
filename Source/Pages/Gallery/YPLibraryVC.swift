@@ -440,6 +440,8 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
             // Multiple selection
             if self.multipleSelectionEnabled && self.selection.count > 1 {
                 let selectedAssets: [(asset: PHAsset, cropRect: CGRect?)] = self.selection.map {
+					print("halohai 1: ", self.mediaManager.fetchResult[$0.index])
+					print("halohai 2: ", $0.cropRect)
                     return (self.mediaManager.fetchResult[$0.index], $0.cropRect)
                 }
                 
