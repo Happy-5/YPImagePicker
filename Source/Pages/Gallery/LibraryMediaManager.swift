@@ -73,6 +73,7 @@ class LibraryMediaManager {
             do {
                 guard let asset = asset else { print("⚠️ PHCachingImageManager >>> Don't have the asset"); return }
                 
+				let videoAssetUrl = self.getVideoUrlFromPHAsset(asset: videoAsset)
                 let assetComposition = AVMutableComposition()
                 let trackTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: asset.duration)
                 
@@ -118,12 +119,24 @@ class LibraryMediaManager {
                 
                 let exportSession = AVAssetExportSession(asset: assetComposition,
                                                          presetName: YPConfig.video.compression)
-                exportSession?.outputFileType = YPConfig.video.fileType
+				
+				if videoAssetUrl.url.pathExtension.lowercased() == "mov" {
+					exportSession?.outputFileType = .mov
+				} else {
+					exportSession?.outputFileType = YPConfig.video.fileType
+				}
+
                 exportSession?.shouldOptimizeForNetworkUse = true
                 exportSession?.videoComposition = videoComposition
-                exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
-                    .appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
-                
+				
+				if videoAssetUrl.url.pathExtension.lowercased() == "mov" {
+					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
+						.appendingUniquePathComponent(pathExtension: AVFileType.mov.fileExtension)
+				} else {
+					  exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
+									  .appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
+				}
+
                 // 6. Exporting
                 DispatchQueue.main.async {
                     self.exportTimer = Timer.scheduledTimer(timeInterval: 0.1,
@@ -174,5 +187,23 @@ class LibraryMediaManager {
             s.cancelExport()
         }
     }
+	
+		
+	func getVideoUrlFromPHAsset(asset:PHAsset)->AVURLAsset{
+		let semaphore = DispatchSemaphore(value: 0)
+		let options = PHVideoRequestOptions()
+		var videoObj: AVURLAsset? = nil
+		
+		options.deliveryMode = .highQualityFormat
+
+		PHImageManager().requestAVAsset(forVideo:asset, options: options, resultHandler: { (avurlAsset, audioMix, dict) in
+			videoObj = avurlAsset as? AVURLAsset
+			semaphore.signal()
+		})
+
+		_ = semaphore.wait(timeout: DispatchTime.distantFuture)
+
+		return videoObj!
+	}
 }
 

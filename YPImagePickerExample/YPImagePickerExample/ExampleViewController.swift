@@ -123,6 +123,8 @@ class ExampleViewController: UIViewController {
         /* Defines the time limit for videos from the library.
            Defaults to 60 seconds. */
         config.video.libraryTimeLimit = 500.0
+		
+		config.video.fileType = .mp4
 
         /* Adds a Crop step in the photo taking process, after filters. Defaults to .none */
         config.showsCrop = .rectangle(ratio: (16/9))
