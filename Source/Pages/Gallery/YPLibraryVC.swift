@@ -241,6 +241,8 @@ public class YPLibraryVC: UIViewController, YPPermissionCheckable {
                     block(s == .authorized)
                 }
             }
+		default:
+			break
         }
     }
     
