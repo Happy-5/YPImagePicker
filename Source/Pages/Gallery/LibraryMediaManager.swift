@@ -73,7 +73,6 @@ class LibraryMediaManager {
             do {
                 guard let asset = asset else { print("⚠️ PHCachingImageManager >>> Don't have the asset"); return }
                 
-				let videoAssetUrl = self.getVideoUrlFromPHAsset(asset: videoAsset)
                 let assetComposition = AVMutableComposition()
                 let trackTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: asset.duration)
                 
