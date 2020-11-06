@@ -120,22 +120,13 @@ class LibraryMediaManager {
                 let exportSession = AVAssetExportSession(asset: assetComposition,
                                                          presetName: YPConfig.video.compression)
 				
-				if videoAssetUrl.url.pathExtension.lowercased() == "mov" {
-					exportSession?.outputFileType = .mov
-				} else {
-					exportSession?.outputFileType = YPConfig.video.fileType
-				}
+				exportSession?.outputFileType = YPConfig.video.fileType
 
                 exportSession?.shouldOptimizeForNetworkUse = true
                 exportSession?.videoComposition = videoComposition
 				
-				if videoAssetUrl.url.pathExtension.lowercased() == "mov" {
-					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
-						.appendingUniquePathComponent(pathExtension: AVFileType.mov.fileExtension)
-				} else {
-					  exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
+				exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
 									  .appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
-				}
 
                 // 6. Exporting
                 DispatchQueue.main.async {
