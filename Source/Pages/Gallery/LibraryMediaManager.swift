@@ -73,7 +73,8 @@ class LibraryMediaManager {
             do {
                 guard let asset = asset else { print("⚠️ PHCachingImageManager >>> Don't have the asset"); return }
 				
-				let videoAssetUrl = self.getVideoUrlFromPHAsset(asset: videoAsset)
+				let assetURL = asset as! AVURLAsset
+				let videoAssetUrl = assetURL.url
                 let assetComposition = AVMutableComposition()
                 let trackTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: asset.duration)
                 
@@ -120,9 +121,9 @@ class LibraryMediaManager {
                 let exportSession = AVAssetExportSession(asset: assetComposition,
                                                          presetName: YPConfig.video.compression)
 				
-				if videoAssetUrl.url.pathExtension.lowercased() == "mov" {
+				if videoAssetUrl.pathExtension.lowercased() == "mov" {
 					exportSession?.outputFileType = .mov
-				} else if videoAssetUrl.url.pathExtension.lowercased() == "mp4" {
+				} else if videoAssetUrl.pathExtension.lowercased() == "mp4" {
 					exportSession?.outputFileType = .mp4
 				} else {
 					exportSession?.outputFileType = YPConfig.video.fileType
@@ -131,10 +132,10 @@ class LibraryMediaManager {
                 exportSession?.shouldOptimizeForNetworkUse = true
                 exportSession?.videoComposition = videoComposition
 				
-				if videoAssetUrl.url.pathExtension.lowercased() == "mov" {
+				if videoAssetUrl.pathExtension.lowercased() == "mov" {
 					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
 						.appendingUniquePathComponent(pathExtension: AVFileType.mov.fileExtension)
-				} else if videoAssetUrl.url.pathExtension.lowercased() == "mp4" {
+				} else if videoAssetUrl.pathExtension.lowercased() == "mp4" {
 					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
 						.appendingUniquePathComponent(pathExtension: AVFileType.mp4.fileExtension)
 				} else {
