@@ -6,6 +6,7 @@
 //  Copyright © 2018 Yummypets. All rights reserved.
 //
 
+
 import UIKit
 import Photos
 import PryntTrimmerView
@@ -125,7 +126,7 @@ public class YPVideoFiltersVC: UIViewController, IsMediaFilterVC {
             // Looks like file:///private/var/mobile/Containers/Data/Application
             // /FAD486B4-784D-4397-B00C-AD0EFFB45F52/tmp/8A2B410A-BD34-4E3F-8CB5-A548A946C1F1.mov
             var destinationURL = URL(fileURLWithPath: NSTemporaryDirectory())
-                .appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
+                .appendingUniquePathComponent(pathExtension: AVFileType.m4v.fileExtension)
 			
 			if asset.url.pathExtension.lowercased() == "mov" {
 				destinationURL = URL(fileURLWithPath: NSTemporaryDirectory())

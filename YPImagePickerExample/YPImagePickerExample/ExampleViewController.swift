@@ -124,7 +124,7 @@ class ExampleViewController: UIViewController {
            Defaults to 60 seconds. */
         config.video.libraryTimeLimit = 500.0
 		
-		config.video.fileType = .mp4
+		config.video.fileType = .m4v
 
         /* Adds a Crop step in the photo taking process, after filters. Defaults to .none */
         config.showsCrop = .rectangle(ratio: (16/9))
@@ -196,7 +196,7 @@ class ExampleViewController: UIViewController {
                 case .video(let video):
                     self.selectedImageV.image = video.thumbnail
                     
-                    let assetURL = video.url
+                    let assetURL = video.url					
                     let playerVC = AVPlayerViewController()
                     let player = AVPlayer(playerItem: AVPlayerItem(url:assetURL))
                     playerVC.player = player

@@ -126,7 +126,7 @@ class LibraryMediaManager {
 				} else if videoAssetUrl.pathExtension.lowercased() == "mp4" {
 					exportSession?.outputFileType = .mp4
 				} else {
-					exportSession?.outputFileType = YPConfig.video.fileType
+					exportSession?.outputFileType = .m4v
 				}
 
                 exportSession?.shouldOptimizeForNetworkUse = true
@@ -140,7 +140,7 @@ class LibraryMediaManager {
 						.appendingUniquePathComponent(pathExtension: AVFileType.mp4.fileExtension)
 				} else {
 					  exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
-						.appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
+						.appendingUniquePathComponent(pathExtension: AVFileType.m4v.fileExtension)
 				}
 
                 // 6. Exporting
