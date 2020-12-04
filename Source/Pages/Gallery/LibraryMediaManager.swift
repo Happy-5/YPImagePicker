@@ -127,7 +127,7 @@ class LibraryMediaManager {
 				} else {
 					exportSession?.outputFileType = YPConfig.video.fileType
 				}
-				
+
                 exportSession?.shouldOptimizeForNetworkUse = true
                 exportSession?.videoComposition = videoComposition
 				
@@ -138,7 +138,7 @@ class LibraryMediaManager {
 					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
 						.appendingUniquePathComponent(pathExtension: AVFileType.mp4.fileExtension)
 				} else {
-					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
+					  exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
 						.appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
 				}
 
@@ -211,4 +211,3 @@ class LibraryMediaManager {
 		return videoObj!
 	}
 }
-

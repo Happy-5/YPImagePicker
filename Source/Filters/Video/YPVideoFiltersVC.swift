@@ -42,7 +42,6 @@ public class YPVideoFiltersVC: UIViewController, IsMediaFilterVC {
     }
     
     // MARK: - Live cycle
-
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -113,7 +112,6 @@ public class YPVideoFiltersVC: UIViewController, IsMediaFilterVC {
     }
     
     // MARK: - Top buttons
-
     @objc public func save() {
         guard let didSave = didSave else { return print("Don't have saveCallback") }
         navigationItem.rightBarButtonItem = YPLoaders.defaultLoader
@@ -126,7 +124,7 @@ public class YPVideoFiltersVC: UIViewController, IsMediaFilterVC {
             
             // Looks like file:///private/var/mobile/Containers/Data/Application
             // /FAD486B4-784D-4397-B00C-AD0EFFB45F52/tmp/8A2B410A-BD34-4E3F-8CB5-A548A946C1F1.mov
-			var destinationURL = URL(fileURLWithPath: NSTemporaryDirectory())
+            var destinationURL = URL(fileURLWithPath: NSTemporaryDirectory())
                 .appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
 			
 			if asset.url.pathExtension.lowercased() == "mov" {
@@ -157,7 +155,6 @@ public class YPVideoFiltersVC: UIViewController, IsMediaFilterVC {
     }
     
     // MARK: - Bottom buttons
-
     @objc public func selectTrim() {
         title = YPConfig.wordings.trim
         
@@ -186,7 +183,6 @@ public class YPVideoFiltersVC: UIViewController, IsMediaFilterVC {
     }
     
     // MARK: - Various Methods
-
     // Updates the bounds of the cover picker if the video is trimmed
     // TODO: Now the trimmer framework doesn't support an easy way to do this.
     // Need to rethink a flow or search other ways.
