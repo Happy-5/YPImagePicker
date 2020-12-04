@@ -72,7 +72,8 @@ class LibraryMediaManager {
         imageManager?.requestAVAsset(forVideo: videoAsset, options: videosOptions) { asset, _, _ in
             do {
                 guard let asset = asset else { print("⚠️ PHCachingImageManager >>> Don't have the asset"); return }
-                
+				
+				let videoAssetUrl = self.getVideoUrlFromPHAsset(asset: videoAsset)
                 let assetComposition = AVMutableComposition()
                 let trackTimeRange = CMTimeRangeMake(start: CMTime.zero, duration: asset.duration)
                 
@@ -119,13 +120,27 @@ class LibraryMediaManager {
                 let exportSession = AVAssetExportSession(asset: assetComposition,
                                                          presetName: YPConfig.video.compression)
 				
-				exportSession?.outputFileType = YPConfig.video.fileType
-
+				if videoAssetUrl.url.pathExtension.lowercased() == "mov" {
+					exportSession?.outputFileType = .mov
+				} else if videoAssetUrl.url.pathExtension.lowercased() == "mp4" {
+					exportSession?.outputFileType = .mp4
+				} else {
+					exportSession?.outputFileType = YPConfig.video.fileType
+				}
+				
                 exportSession?.shouldOptimizeForNetworkUse = true
                 exportSession?.videoComposition = videoComposition
 				
-				exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
-									  .appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
+				if videoAssetUrl.url.pathExtension.lowercased() == "mov" {
+					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
+						.appendingUniquePathComponent(pathExtension: AVFileType.mov.fileExtension)
+				} else if videoAssetUrl.url.pathExtension.lowercased() == "mp4" {
+					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
+						.appendingUniquePathComponent(pathExtension: AVFileType.mp4.fileExtension)
+				} else {
+					exportSession?.outputURL = URL(fileURLWithPath: NSTemporaryDirectory())
+						.appendingUniquePathComponent(pathExtension: YPConfig.video.fileType.fileExtension)
+				}
 
                 // 6. Exporting
                 DispatchQueue.main.async {
