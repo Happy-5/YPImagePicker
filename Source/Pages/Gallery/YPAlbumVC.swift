@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Stevia
+ 
 import Photos
 
 class YPAlbumVC: UIViewController {

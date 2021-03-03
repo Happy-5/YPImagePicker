@@ -8,7 +8,6 @@
 
 import UIKit
 import Photos
-import PryntTrimmerView
 
 public class YPVideoFiltersVC: UIViewController, IsMediaFilterVC {
     

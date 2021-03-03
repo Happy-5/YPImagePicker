@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Stevia
+ 
 
 final class YPMenuItem: UIView {
     

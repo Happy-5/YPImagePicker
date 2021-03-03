@@ -7,6 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46799D0225EFAAE50094D09C /* Stevia+Baselines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CEF25EFAAE40094D09C /* Stevia+Baselines.swift */; };
+		46799D0325EFAAE50094D09C /* Stevia+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF025EFAAE50094D09C /* Stevia+Center.swift */; };
+		46799D0425EFAAE50094D09C /* Stevia+Equation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF125EFAAE50094D09C /* Stevia+Equation.swift */; };
+		46799D0525EFAAE50094D09C /* Stevia+Alignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF225EFAAE50094D09C /* Stevia+Alignment.swift */; };
+		46799D0625EFAAE50094D09C /* Stevia+DoubleDash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF325EFAAE50094D09C /* Stevia+DoubleDash.swift */; };
+		46799D0725EFAAE50094D09C /* Stevia+FlexibleMargin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF425EFAAE50094D09C /* Stevia+FlexibleMargin.swift */; };
+		46799D0825EFAAE50094D09C /* Stevia+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF525EFAAE50094D09C /* Stevia+Constraints.swift */; };
+		46799D0925EFAAE50094D09C /* Stevia+LayoutAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF625EFAAE50094D09C /* Stevia+LayoutAnchors.swift */; };
+		46799D0A25EFAAE50094D09C /* Stevia+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF725EFAAE50094D09C /* Stevia+Hierarchy.swift */; };
+		46799D0B25EFAAE50094D09C /* Stevia+Percentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF825EFAAE50094D09C /* Stevia+Percentage.swift */; };
+		46799D0C25EFAAE50094D09C /* Stevia+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CF925EFAAE50094D09C /* Stevia+Style.swift */; };
+		46799D0D25EFAAE50094D09C /* Stevia+GetConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CFA25EFAAE50094D09C /* Stevia+GetConstraint.swift */; };
+		46799D0E25EFAAE50094D09C /* Stevia+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CFB25EFAAE50094D09C /* Stevia+Size.swift */; };
+		46799D0F25EFAAE50094D09C /* Stevia+Stacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CFC25EFAAE50094D09C /* Stevia+Stacks.swift */; };
+		46799D1025EFAAE50094D09C /* Stevia+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CFD25EFAAE50094D09C /* Stevia+Notifications.swift */; };
+		46799D1125EFAAE50094D09C /* Stevia+Fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CFE25EFAAE50094D09C /* Stevia+Fill.swift */; };
+		46799D1225EFAAE50094D09C /* Stevia+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799CFF25EFAAE50094D09C /* Stevia+Content.swift */; };
+		46799D1325EFAAE50094D09C /* Stevia+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D0025EFAAE50094D09C /* Stevia+Operators.swift */; };
+		46799D1425EFAAE50094D09C /* Stevia+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D0125EFAAE50094D09C /* Stevia+Position.swift */; };
+		46799D1B25EFAB210094D09C /* PryntTrimmerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D1925EFAB210094D09C /* PryntTrimmerView.swift */; };
+		46799D1C25EFAB210094D09C /* HandlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D1A25EFAB210094D09C /* HandlerView.swift */; };
+		46799D1F25EFAB2B0094D09C /* AssetVideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D1D25EFAB2B0094D09C /* AssetVideoScrollView.swift */; };
+		46799D2025EFAB2B0094D09C /* AVAssetTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D1E25EFAB2B0094D09C /* AVAssetTimeSelector.swift */; };
+		46799D2425EFAB3D0094D09C /* VideoScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D2125EFAB3D0094D09C /* VideoScrollView.swift */; };
+		46799D2525EFAB3D0094D09C /* VideoCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D2225EFAB3D0094D09C /* VideoCropView.swift */; };
+		46799D2625EFAB3D0094D09C /* CropMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D2325EFAB3D0094D09C /* CropMaskView.swift */; };
+		46799D2825EFAB440094D09C /* ThumbSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799D2725EFAB440094D09C /* ThumbSelectorView.swift */; };
 		99019E4C2018CCD6007325C2 /* YPBottomPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99019E4B2018CCD6007325C2 /* YPBottomPagerView.swift */; };
 		99019E4E2018CD31007325C2 /* YPPagerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99019E4D2018CD31007325C2 /* YPPagerMenu.swift */; };
 		99019E512018CDED007325C2 /* YPImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99019E502018CDED007325C2 /* YPImageSize.swift */; };
@@ -97,6 +124,33 @@
 /* Begin PBXFileReference section */
 		16550C5C214D5EE60090BADF /* bg */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bg; path = bg.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B0E1B962070669B0048E95B /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		46799CEF25EFAAE40094D09C /* Stevia+Baselines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Baselines.swift"; path = "Shared/Stevia/Stevia+Baselines.swift"; sourceTree = "<group>"; };
+		46799CF025EFAAE50094D09C /* Stevia+Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Center.swift"; path = "Shared/Stevia/Stevia+Center.swift"; sourceTree = "<group>"; };
+		46799CF125EFAAE50094D09C /* Stevia+Equation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Equation.swift"; path = "Shared/Stevia/Stevia+Equation.swift"; sourceTree = "<group>"; };
+		46799CF225EFAAE50094D09C /* Stevia+Alignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Alignment.swift"; path = "Shared/Stevia/Stevia+Alignment.swift"; sourceTree = "<group>"; };
+		46799CF325EFAAE50094D09C /* Stevia+DoubleDash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+DoubleDash.swift"; path = "Shared/Stevia/Stevia+DoubleDash.swift"; sourceTree = "<group>"; };
+		46799CF425EFAAE50094D09C /* Stevia+FlexibleMargin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+FlexibleMargin.swift"; path = "Shared/Stevia/Stevia+FlexibleMargin.swift"; sourceTree = "<group>"; };
+		46799CF525EFAAE50094D09C /* Stevia+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Constraints.swift"; path = "Shared/Stevia/Stevia+Constraints.swift"; sourceTree = "<group>"; };
+		46799CF625EFAAE50094D09C /* Stevia+LayoutAnchors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+LayoutAnchors.swift"; path = "Shared/Stevia/Stevia+LayoutAnchors.swift"; sourceTree = "<group>"; };
+		46799CF725EFAAE50094D09C /* Stevia+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Hierarchy.swift"; path = "Shared/Stevia/Stevia+Hierarchy.swift"; sourceTree = "<group>"; };
+		46799CF825EFAAE50094D09C /* Stevia+Percentage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Percentage.swift"; path = "Shared/Stevia/Stevia+Percentage.swift"; sourceTree = "<group>"; };
+		46799CF925EFAAE50094D09C /* Stevia+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Style.swift"; path = "Shared/Stevia/Stevia+Style.swift"; sourceTree = "<group>"; };
+		46799CFA25EFAAE50094D09C /* Stevia+GetConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+GetConstraint.swift"; path = "Shared/Stevia/Stevia+GetConstraint.swift"; sourceTree = "<group>"; };
+		46799CFB25EFAAE50094D09C /* Stevia+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Size.swift"; path = "Shared/Stevia/Stevia+Size.swift"; sourceTree = "<group>"; };
+		46799CFC25EFAAE50094D09C /* Stevia+Stacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Stacks.swift"; path = "Shared/Stevia/Stevia+Stacks.swift"; sourceTree = "<group>"; };
+		46799CFD25EFAAE50094D09C /* Stevia+Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Notifications.swift"; path = "Shared/Stevia/Stevia+Notifications.swift"; sourceTree = "<group>"; };
+		46799CFE25EFAAE50094D09C /* Stevia+Fill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Fill.swift"; path = "Shared/Stevia/Stevia+Fill.swift"; sourceTree = "<group>"; };
+		46799CFF25EFAAE50094D09C /* Stevia+Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Content.swift"; path = "Shared/Stevia/Stevia+Content.swift"; sourceTree = "<group>"; };
+		46799D0025EFAAE50094D09C /* Stevia+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Operators.swift"; path = "Shared/Stevia/Stevia+Operators.swift"; sourceTree = "<group>"; };
+		46799D0125EFAAE50094D09C /* Stevia+Position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Stevia+Position.swift"; path = "Shared/Stevia/Stevia+Position.swift"; sourceTree = "<group>"; };
+		46799D1925EFAB210094D09C /* PryntTrimmerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PryntTrimmerView.swift; path = Shared/PryntTrimmerView/Trimmer/PryntTrimmerView.swift; sourceTree = "<group>"; };
+		46799D1A25EFAB210094D09C /* HandlerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HandlerView.swift; path = Shared/PryntTrimmerView/Trimmer/HandlerView.swift; sourceTree = "<group>"; };
+		46799D1D25EFAB2B0094D09C /* AssetVideoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AssetVideoScrollView.swift; path = Shared/PryntTrimmerView/Parents/AssetVideoScrollView.swift; sourceTree = "<group>"; };
+		46799D1E25EFAB2B0094D09C /* AVAssetTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVAssetTimeSelector.swift; path = Shared/PryntTrimmerView/Parents/AVAssetTimeSelector.swift; sourceTree = "<group>"; };
+		46799D2125EFAB3D0094D09C /* VideoScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoScrollView.swift; path = Shared/PryntTrimmerView/Cropper/VideoScrollView.swift; sourceTree = "<group>"; };
+		46799D2225EFAB3D0094D09C /* VideoCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCropView.swift; path = Shared/PryntTrimmerView/Cropper/VideoCropView.swift; sourceTree = "<group>"; };
+		46799D2325EFAB3D0094D09C /* CropMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CropMaskView.swift; path = Shared/PryntTrimmerView/Cropper/CropMaskView.swift; sourceTree = "<group>"; };
+		46799D2725EFAB440094D09C /* ThumbSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThumbSelectorView.swift; path = Shared/PryntTrimmerView/ThumbSelectorView.swift; sourceTree = "<group>"; };
 		4EA67521208A45080076D4E3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52412A931CA6114A0073C4BE /* YPImagePicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YPImagePicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F01F9DC20DCC494007432E4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -209,9 +263,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46799CE925EFAA910094D09C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				46799D1525EFAAF70094D09C /* PryntTrimmerView */,
+				46799CEE25EFAAC00094D09C /* Stevia */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		46799CEE25EFAAC00094D09C /* Stevia */ = {
+			isa = PBXGroup;
+			children = (
+				46799CF225EFAAE50094D09C /* Stevia+Alignment.swift */,
+				46799CEF25EFAAE40094D09C /* Stevia+Baselines.swift */,
+				46799CF025EFAAE50094D09C /* Stevia+Center.swift */,
+				46799CF525EFAAE50094D09C /* Stevia+Constraints.swift */,
+				46799CFF25EFAAE50094D09C /* Stevia+Content.swift */,
+				46799CF325EFAAE50094D09C /* Stevia+DoubleDash.swift */,
+				46799CF125EFAAE50094D09C /* Stevia+Equation.swift */,
+				46799CFE25EFAAE50094D09C /* Stevia+Fill.swift */,
+				46799CF425EFAAE50094D09C /* Stevia+FlexibleMargin.swift */,
+				46799CFA25EFAAE50094D09C /* Stevia+GetConstraint.swift */,
+				46799CF725EFAAE50094D09C /* Stevia+Hierarchy.swift */,
+				46799CF625EFAAE50094D09C /* Stevia+LayoutAnchors.swift */,
+				46799CFD25EFAAE50094D09C /* Stevia+Notifications.swift */,
+				46799D0025EFAAE50094D09C /* Stevia+Operators.swift */,
+				46799CF825EFAAE50094D09C /* Stevia+Percentage.swift */,
+				46799D0125EFAAE50094D09C /* Stevia+Position.swift */,
+				46799CFB25EFAAE50094D09C /* Stevia+Size.swift */,
+				46799CFC25EFAAE50094D09C /* Stevia+Stacks.swift */,
+				46799CF925EFAAE50094D09C /* Stevia+Style.swift */,
+			);
+			name = Stevia;
+			sourceTree = "<group>";
+		};
+		46799D1525EFAAF70094D09C /* PryntTrimmerView */ = {
+			isa = PBXGroup;
+			children = (
+				46799D2725EFAB440094D09C /* ThumbSelectorView.swift */,
+				46799D1825EFAB150094D09C /* Trimmer */,
+				46799D1725EFAB100094D09C /* Parents */,
+				46799D1625EFAB0A0094D09C /* Cropper */,
+			);
+			name = PryntTrimmerView;
+			sourceTree = "<group>";
+		};
+		46799D1625EFAB0A0094D09C /* Cropper */ = {
+			isa = PBXGroup;
+			children = (
+				46799D2325EFAB3D0094D09C /* CropMaskView.swift */,
+				46799D2225EFAB3D0094D09C /* VideoCropView.swift */,
+				46799D2125EFAB3D0094D09C /* VideoScrollView.swift */,
+			);
+			name = Cropper;
+			sourceTree = "<group>";
+		};
+		46799D1725EFAB100094D09C /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				46799D1D25EFAB2B0094D09C /* AssetVideoScrollView.swift */,
+				46799D1E25EFAB2B0094D09C /* AVAssetTimeSelector.swift */,
+			);
+			name = Parents;
+			sourceTree = "<group>";
+		};
+		46799D1825EFAB150094D09C /* Trimmer */ = {
+			isa = PBXGroup;
+			children = (
+				46799D1A25EFAB210094D09C /* HandlerView.swift */,
+				46799D1925EFAB210094D09C /* PryntTrimmerView.swift */,
+			);
+			name = Trimmer;
+			sourceTree = "<group>";
+		};
 		52412A891CA6114A0073C4BE = {
 			isa = PBXGroup;
 			children = (
+				46799CE925EFAA910094D09C /* Shared */,
 				99C6D69D1F1FB5C100711DB2 /* Source */,
 				99C6D6971F1FB5C100711DB2 /* Resources */,
 				52412A941CA6114A0073C4BE /* Products */,
@@ -510,6 +639,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				fr,
 				es,
@@ -563,7 +693,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -572,20 +702,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46799D0725EFAAE50094D09C /* Stevia+FlexibleMargin.swift in Sources */,
 				99C6D6C81F1FB5C100711DB2 /* YPFiltersView.swift in Sources */,
 				EB05F6E7214A7191002040AA /* YPVideoProcessor.swift in Sources */,
+				46799D1025EFAAE50094D09C /* Stevia+Notifications.swift in Sources */,
 				990FD293201B3D69002A39A1 /* YPLibraryViewDelegate.swift in Sources */,
 				990FD28F201A49D3002A39A1 /* YPPermissionCheckable.swift in Sources */,
+				46799D0825EFAAE50094D09C /* Stevia+Constraints.swift in Sources */,
 				EB473E23208E1DB000D16105 /* AVPlayer+Extensions.swift in Sources */,
+				46799D2825EFAB440094D09C /* ThumbSelectorView.swift in Sources */,
 				99278DA820512BD90059532E /* PreiOS10PhotoCapture.swift in Sources */,
 				EBD2B641207B7D7400E711C2 /* YPMediaItem.swift in Sources */,
+				46799D0B25EFAAE50094D09C /* Stevia+Percentage.swift in Sources */,
 				99C6D6C71F1FB5C100711DB2 /* YPPhotoFiltersVC.swift in Sources */,
 				99D1DC2B1F9788930047F0E0 /* YPImagePickerConfiguration.swift in Sources */,
 				99B8C4C3208F8EE900127119 /* YPLoadingView.swift in Sources */,
 				99278DAA20512BFB0059532E /* PostiOS10PhotoCapture.swift in Sources */,
+				46799D0F25EFAAE50094D09C /* Stevia+Stacks.swift in Sources */,
 				990FD297201B4A5F002A39A1 /* PHCachingImageManager+Extensions.swift in Sources */,
 				99CF6D23201B71DC00487F77 /* YPLibrary+LibraryChange.swift in Sources */,
 				99C6D6C51F1FB5C100711DB2 /* YPFilterCollectionViewCell.swift in Sources */,
+				46799D0C25EFAAE50094D09C /* Stevia+Style.swift in Sources */,
 				990FD295201B3E59002A39A1 /* YPDragDirection.swift in Sources */,
 				99278DAE205140F60059532E /* YPPermissionDeniedPopup.swift in Sources */,
 				99CF6D21201B70A000487F77 /* YPLibraryVC+CollectionView.swift in Sources */,
@@ -598,29 +735,40 @@
 				99019E4C2018CCD6007325C2 /* YPBottomPagerView.swift in Sources */,
 				99C6D6BB1F1FB5C100711DB2 /* YPLibraryVC.swift in Sources */,
 				99C6D6CB1F1FB5C100711DB2 /* YPHelper.swift in Sources */,
+				46799D0225EFAAE50094D09C /* Stevia+Baselines.swift in Sources */,
 				EB5B07C4209146F00099C1FA /* UIButton+Extensions.swift in Sources */,
 				EB65C4B5209321420037858B /* String+Extensions.swift in Sources */,
 				99019E532018CE19007325C2 /* YPPickerScreen.swift in Sources */,
+				46799D2025EFAB2B0094D09C /* AVAssetTimeSelector.swift in Sources */,
 				99CF6D1F201B6B9E00487F77 /* CGRect+Extensions.swift in Sources */,
+				46799D1325EFAAE50094D09C /* Stevia+Operators.swift in Sources */,
 				99CF6D1D201B6ABA00487F77 /* IndexSet+Extensions.swift in Sources */,
 				EB59F452208766B800811B7B /* YPVideoFiltersVC.swift in Sources */,
 				EB473E1D208E1B9E00D16105 /* AVAsset+Extensions.swift in Sources */,
+				46799D1B25EFAB210094D09C /* PryntTrimmerView.swift in Sources */,
 				9911FA24203C3A31000E9B06 /* UIImage+Extensions.swift in Sources */,
 				99278DAC20512C330059532E /* YPPhotoCapture.swift in Sources */,
+				46799D1125EFAAE50094D09C /* Stevia+Fill.swift in Sources */,
 				EB584BFF207B883A00265B38 /* YPSelectionsGalleryCell.swift in Sources */,
 				99278DB02051816F0059532E /* YPPhotoCaptureDefaults.swift in Sources */,
 				99C6D6CE1F1FB5C100711DB2 /* YPPhotoSaver.swift in Sources */,
+				46799D0425EFAAE50094D09C /* Stevia+Equation.swift in Sources */,
 				99C6D6C31F1FB5C100711DB2 /* YPCameraView.swift in Sources */,
 				99019E562018D008007325C2 /* YPMenuItem.swift in Sources */,
 				9915D9D32087E692003FC307 /* YPLibrarySelection.swift in Sources */,
 				EB1AB2EA20AC1DED00BFA79F /* CGFloat+Extensions.swift in Sources */,
 				99C6D6C21F1FB5C100711DB2 /* YPCameraVC.swift in Sources */,
+				46799D0325EFAAE50094D09C /* Stevia+Center.swift in Sources */,
+				46799D0625EFAAE50094D09C /* Stevia+DoubleDash.swift in Sources */,
+				46799D1F25EFAB2B0094D09C /* AssetVideoScrollView.swift in Sources */,
 				990FD299201B67FE002A39A1 /* PHFetchResult+Extensions.swift in Sources */,
 				EB473E1B208E1B7400D16105 /* NSFileManager+Extensions.swift in Sources */,
 				99A0529A1F20A19B005600B3 /* YPAlbumVC.swift in Sources */,
 				99A0529D1F20B45D005600B3 /* YPAlbumView.swift in Sources */,
 				EB473E21208E1BF400D16105 /* YPTrimError.swift in Sources */,
 				EB584C03207B990200265B38 /* AVFoundation+Extensions.swift in Sources */,
+				46799D0D25EFAAE50094D09C /* Stevia+GetConstraint.swift in Sources */,
+				46799D1425EFAAE50094D09C /* Stevia+Position.swift in Sources */,
 				99C6D6BF1F1FB5C100711DB2 /* YPGridView.swift in Sources */,
 				99C6D6D01F1FB5C100711DB2 /* YPVideoCaptureVC.swift in Sources */,
 				99A052A31F20B4CA005600B3 /* YPAlbumsManager.swift in Sources */,
@@ -628,23 +776,32 @@
 				EB473E25208E1DCA00D16105 /* AVCaptureSession+Extensions.swift in Sources */,
 				EBB0FF7A20877A7500C84E25 /* YPVideoView.swift in Sources */,
 				EB473E19208E198E00D16105 /* AVFileType+Extensions.swift in Sources */,
+				46799D2425EFAB3D0094D09C /* VideoScrollView.swift in Sources */,
 				EBD66105208104EA00EA276E /* YPIcons.swift in Sources */,
 				EB473E1F208E1BCC00D16105 /* AVMutableComposition+Extensions.swift in Sources */,
+				46799D2525EFAB3D0094D09C /* VideoCropView.swift in Sources */,
+				46799D1225EFAAE50094D09C /* Stevia+Content.swift in Sources */,
 				99472DED2056E33700419F9E /* YPWordings.swift in Sources */,
 				99A0529F1F20B480005600B3 /* YPAlbumCell.swift in Sources */,
 				99C6D6BC1F1FB5C100711DB2 /* YPLibraryView.swift in Sources */,
 				99A3C91220319231008D7E23 /* YPCropVC.swift in Sources */,
+				46799D1C25EFAB210094D09C /* HandlerView.swift in Sources */,
 				EB584BFB207B870F00265B38 /* YPSelectionsGalleryVC.swift in Sources */,
 				99019E512018CDED007325C2 /* YPImageSize.swift in Sources */,
 				99CF6D25201B727900487F77 /* YPLibraryVC+PanGesture.swift in Sources */,
 				99CF6D27201B739600487F77 /* YPAlerts.swift in Sources */,
 				99C6D6CF1F1FB5C100711DB2 /* YPPickerVC.swift in Sources */,
+				46799D0A25EFAAE50094D09C /* Stevia+Hierarchy.swift in Sources */,
 				EB94F28E208E3A140049F523 /* YPLoaders.swift in Sources */,
 				99CF6D29201B900400487F77 /* LibraryMediaManager.swift in Sources */,
 				99CD962720D179FD009F5084 /* YPSelectionsGalleryView.swift in Sources */,
+				46799D2625EFAB3D0094D09C /* CropMaskView.swift in Sources */,
 				99C6D6BE1F1FB5C100711DB2 /* YPLibraryViewCell.swift in Sources */,
 				99C6D6C41F1FB5C100711DB2 /* YPFilter.swift in Sources */,
+				46799D0525EFAAE50094D09C /* Stevia+Alignment.swift in Sources */,
+				46799D0E25EFAAE50094D09C /* Stevia+Size.swift in Sources */,
 				99C6D6C91F1FB5C100711DB2 /* YPBottomPager.swift in Sources */,
+				46799D0925EFAAE50094D09C /* Stevia+LayoutAnchors.swift in Sources */,
 				99CF6D2B201CB96700487F77 /* YPVideoCaptureHelper.swift in Sources */,
 				99019E4E2018CD31007325C2 /* YPPagerMenu.swift in Sources */,
 				99C6D6C01F1FB5C100711DB2 /* YPAssetZoomableView.swift in Sources */,
